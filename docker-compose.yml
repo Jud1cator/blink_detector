@@ -10,6 +10,6 @@ services:
       VIDEO: $VIDEO
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
-      - ./videos:/videos
+      - ./:/out
     devices:
       - /dev/video0:/dev/video0

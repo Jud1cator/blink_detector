@@ -76,8 +76,8 @@ if __name__ == '__main__':
     # Vector for EYE_AR_THRESH calculation
     ear_vec = np.empty((0,))
 
-    frame = imutils.resize(vs.read(), height=720)
-    out = cv2.VideoWriter("out.mp4",
+    frame = imutils.resize(vs.read(), width=450)
+    out = cv2.VideoWriter("/out/out.mp4",
                           cv2.VideoWriter_fourcc(*"mp4v"),
                           FPS, frame.shape[1::-1])
 
@@ -156,7 +156,6 @@ if __name__ == '__main__':
                         cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 
         cv2.imshow("", frame)
-        frame = imutils.resize(frame, height=720)
         out.write(frame)
 
         key = cv2.waitKey(1) & 0xFF
