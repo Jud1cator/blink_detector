@@ -1,0 +1,15 @@
+version: "2.4"
+
+services:
+  blink_detector:
+    image: blink_detector
+    build: .
+    environment:
+      QT_X11_NO_MITSHM: 1
+      DISPLAY: $DISPLAY
+      VIDEO: $VIDEO
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./videos:/videos
+    devices:
+      - /dev/video0:/dev/video0
